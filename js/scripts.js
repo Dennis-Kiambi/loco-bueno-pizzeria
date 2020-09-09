@@ -140,6 +140,43 @@ CustomerOrder.prototype.calculateTotal = function () {
 
 //Create order
 
+var myOrder = new CustomerOrder();
+/* myOrder.customerName = 'Dennis Kwaku';
+myOrder.deliver = true;
+myOrder.addPizza(myPizzaTest);
+myOrder.addPizza(myPizzaTest);
+myOrder.deliveryAddress = new DeliveryAddress('dennis@kwaku.com', '0722 123 456', 'Right here right now', 'Empire state');
+myOrder.calculateTotal(); */
+
+
+/* if (myOrder.deliver && myOrder.deliveryAddress == null) {
+    console.error('Delivery address required');
+}
+
+console.log('myOrder: ', myOrder); */
+
+function refreshPizzaTable() {
+    $('#tablePizzas tbody').html('');
+    myOrder.pizzas.forEach(function (pizza, index) {
+        let toppings = pizza.toppings.map(function (topping) {
+            return topping.displayName;
+        });
+        let rowDisplay = pizza.size.displayName + ' - ' + pizza.crust.displayName + '<br/>' + '<small>' + toppings + '</small>';
+
+        let row = '<tr>'
+            + '<td>' + (index + 1) + '</td>'
+            + '<td>' + rowDisplay + '</td>'
+            + '<td>' + pizza.count + '</td>'
+            + '<td>' + pizza.total + '</td>'
+            + '</tr>';
+
+        $('#tablePizzas tbody').append(row);
+    });
+    $('#tablePizzasTotal').html(myOrder.total);
+
+
+}
+
 
 
 
