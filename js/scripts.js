@@ -124,6 +124,22 @@ function CustomerOrder() {
     this.deliveryCost = 300;
     this.total = 0;
 }
+CustomerOrder.prototype.addPizza = function (pizza) {
+    this.pizzas.push(pizza);
+    this.calculateTotal();
+}
+
+CustomerOrder.prototype.calculateTotal = function () {
+    let pizzaCost = this.pizzas.reduce(function (sum, pizza) {
+        return sum + pizza.total;
+    }, 0);
+
+    this.total = pizzaCost + (this.deliver ? this.deliveryCost : 0);
+};
+
+
+//Create order
+
 
 
 
