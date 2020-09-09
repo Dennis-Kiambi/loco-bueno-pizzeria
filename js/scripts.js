@@ -1,10 +1,18 @@
-$(document).ready(function () {
-    // function Pizza(pizzasize, crust, toppings, delivery) {
+//Define pizza object and methods
+function PizzaSize(id, displayName, cost) {
+    this.id = id;
+    this.displayName = displayName;
+    this.cost = cost;
+}
 
-    $('#delivery').hide();
-    $('#delivery-check').click(function () {
-        $('#delivery').toggle();
-    });
+
+
+
+
+
+    // function Pizza(pizzasize, crust, toppings, delivery) {
+    /*
+    
 
     const txtSize = document.getElementById('inlineFormCustomSelectPref');
     const txtCrust = document.getElementById('inlineFormCustomSelectPref2');
@@ -92,7 +100,7 @@ $(document).ready(function () {
     console.log(howMany);
 
 
-
+    */
 
 
     // let bacon = 150;
