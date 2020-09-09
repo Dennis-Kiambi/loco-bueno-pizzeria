@@ -107,6 +107,24 @@ myPizzaTest.calculateTotal(); */
 
 //console.log('myPizzaTest: ', myPizzaTest);
 
+function DeliveryAddress(email, phoneNumber, physicalAddress, building) {
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.physicalAddress = physicalAddress;
+    this.building = building;
+
+}
+
+//Define order
+function CustomerOrder() {
+    this.customerName = '';
+    this.deliver = false;
+    this.deliveryAddress = null;
+    this.pizzas = [];
+    this.deliveryCost = 300;
+    this.total = 0;
+}
+
 
 
 
