@@ -5,9 +5,42 @@ function PizzaSize(id, displayName, cost) {
     this.cost = cost;
 }
 
+function PizzaCrust(id, displayName, cost) {
+    this.id = id;
+    this.displayName = displayName;
+    this.cost = cost;
+}
+
+function PizzaTopping(id, displayName, costSmall, costMedium, costLarge) {
+    this.id = id;
+    this.displayName = displayName;
+    this.costSmall = costSmall;
+    this.costMedium = costMedium;
+    this.costLarge = costLarge;
+}
 
 
 
+var myPizzaSizes = [
+    new PizzaSize(1, 'Small', 100),
+    new PizzaSize(2, 'Medium', 200),
+    new PizzaSize(3, 'Large', 300),
+];
+
+var myPizzaCrusts = [
+    new PizzaCrust(1, 'Crispy', 400),
+    new PizzaCrust(2, 'Fluffy', 500),
+    new PizzaCrust(3, 'Gluten-Free', 300),
+];
+
+var myPizzaToppings = [
+    new PizzaTopping(1, 'Chicken', 100, 120, 150),
+    new PizzaTopping(2, 'Bacon', 110, 130, 160),
+    new PizzaTopping(3, 'Sausage', 120, 140, 170),
+    new PizzaTopping(4, 'Mushroom', 130, 150, 180),
+    new PizzaTopping(5, 'Green-Peppers', 140, 160, 190),
+    new PizzaTopping(6, 'Red-Peppers', 140, 160, 190),
+];
 
 
     // function Pizza(pizzasize, crust, toppings, delivery) {
