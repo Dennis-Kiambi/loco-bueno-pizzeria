@@ -254,6 +254,16 @@ function addNewPizza() {
     resetForm();
 }
 
+function resetForm() {
+    console.log('Resseting form');
+    $('input[name="pizza-size"]:checked').prop("checked", false);
+    $('input[name="pizza-crust"]:checked').prop("checked", false);
+    $('input[name="pizza-toppings"]:checked').prop("checked", false);
+    $('#txtHowMany').val('1');
+}
+
+//place order
+
 
 
 
