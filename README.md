@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td>
-  Delani studio is a visual designers hub that offers designers a platform to create and implement visual designs, workflows and solicit user feedback.
+  Pizzeria Loco Bueno is a web app that lets you order the best custom-made pizza by customizing all the ingrediets to your liking before ordering.
 </td>
 </tr>
 </table>
