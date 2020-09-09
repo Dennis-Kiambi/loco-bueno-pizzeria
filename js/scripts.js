@@ -40,10 +40,6 @@ var myPizzaToppings = [
     new PizzaTopping(6, 'Red-Peppers', 140, 160, 190),
 ];
 
-/* console.log('myPizzaSizes: ', myPizzaSizes);
-console.log('myPizzaCrust: ', myPizzaCrust);
-console.log('myPizzaToppings: ', myPizzaToppings); */
-
 function Pizza() {
     this.total = 0;
     this.count = 1;
@@ -53,13 +49,6 @@ function Pizza() {
 }
 
 Pizza.prototype.addTopping = function (newToppings) {
-    /* console.log('Clearing :', this.toppings);
-    this.toppings.splice(0, this.toppings.length);
-    console.log('End Clearing :', this.toppings);
-    this.toppings.push(newToppings);
-    console.log('After :', this.toppings); */
-
-    //console.log('newToppings :', newToppings);
     this.toppings.splice(0, this.toppings.length);
     let instance = this;
     newToppings.forEach(function (item) {
@@ -89,21 +78,6 @@ Pizza.prototype.calculateTotal = function () {
 
     this.total = total * this.count;
 }
-
-/* var myPizzaTest = new Pizza();
-myPizzaTest.size = myPizzaSizes[1];
-myPizzaTest.crust = myPizzaCrust[2];
-myPizzaTest.count = 2;
-
-var myTestToppings = [
-    myPizzaToppings[1],
-    myPizzaToppings[2],
-    myPizzaToppings[4]
-]
-myPizzaTest.addTopping(myTestToppings);
-myPizzaTest.calculateTotal(); */
-
-//console.log('myPizzaTest: ', myPizzaTest);
 
 function DeliveryAddress(email, phoneNumber, physicalAddress, building) {
     this.email = email;
@@ -139,19 +113,6 @@ CustomerOrder.prototype.calculateTotal = function () {
 //Create order
 
 var myOrder = new CustomerOrder();
-/* myOrder.customerName = 'Dennis Kwaku';
-myOrder.deliver = true;
-myOrder.addPizza(myPizzaTest);
-myOrder.addPizza(myPizzaTest);
-myOrder.deliveryAddress = new DeliveryAddress('dennis@kwaku.com', '0722 123 456', 'Right here right now', 'Empire state');
-myOrder.calculateTotal(); */
-
-
-/* if (myOrder.deliver && myOrder.deliveryAddress == null) {
-    console.error('Delivery address required');
-}
-
-console.log('myOrder: ', myOrder); */
 
 function refreshPizzaTable() {
     $('#tablePizzas tbody').html('');
@@ -284,170 +245,4 @@ $(document).ready(function () {
         console.log('myOrder.deliver : ', myOrder.deliver);
     });
 
-
-
-
-
-    // function Pizza(pizzasize, crust, toppings, delivery) {
-    /*
-    
-
-    const txtSize = document.getElementById('inlineFormCustomSelectPref');
-    const txtCrust = document.getElementById('inlineFormCustomSelectPref2');
-    const txtChicken = document.getElementById('chicken');
-    const txtBacon = document.getElementById('bacon');
-    const txtSausage = document.getElementById('sausage');
-    const txtMushrooms = document.getElementById('mushrooms');
-    const txtgreenPeppers = document.getElementById('greenPeppers');
-
-    let size = txtSize.value;
-    let chicken = txtChicken.value;
-    let bacon = txtBacon.value;
-    let sausage = txtSausage.value;
-    let mushrooms = txtMushrooms.value;
-    let greenPeppers = txtgreenPeppers.value;
-
-
-
-    $('#inlineFormCustomSelectPref').change(function () {
-        let size = $('#inlineFormCustomSelectPref option:selected').val();
-        let large = 500;
-        let medium = 400;
-        let small = 300;
-        if (size == 'large') {
-            return (large);
-        }
-        if (size == 'medium') {
-            return (medium);
-        }
-        if (size == 'small') {
-            return (small);
-        }
-
-    });
-
-    // let pizzaCrust = function () {
-    $('#inlineFormCustomSelectPref2').change(function () {
-        let crust = $('#inlineFormCustomSelectPref2 option:selected').val();
-        let crispy = 200;
-        let fluffy = 250;
-        let gluttenFree = 300;
-        if (crust == 'crispy') {
-            return (crispy);
-        }
-        if (crust == 'fluffy') {
-            return (fluffy);
-        }
-        if (crust == 'gluttenFree') {
-            console.log(gluttenFree);
-        }
-
-    });
-    // pizzaCrust();
-    // };
-    // console.log(pizzaCrust)
-
-    $('#chicken').click(function () {
-        let chicken = 150;
-        console.log(chicken);
-    });
-
-    $('#bacon').click(function () {
-        let bacon = 150;
-        console.log(bacon);
-    });
-
-    $('#sausage').click(function () {
-        let sausage = 150;
-        console.log(sausage);
-    });
-
-    $('#mushrooms').click(function () {
-        let mushrooms = 100;
-        console.log(mushrooms);
-    });
-
-    $('#greenPeppers').click(function () {
-        let greenPeppers = 100;
-        console.log(greenPeppers);
-    });
-    let toppings = [chicken + bacon + sausage + mushrooms + greenPeppers];
-
-
-    let howMany = $('#howMany').val();
-    console.log(howMany);
-
-
-    */
-
-
-    // let bacon = 150;
-    // let sausage = 150;
-    // let mushrooms = 100;
-    // let greenPeppers = 100;
-    // if (chicken = true) {
-    //     alert(toppings);
-    // });
-    // let toppings = chicken + bacon + sausage + mushrooms + greenPeppers;
-    // $.each($("input[name='top']:checked"), function () {
-    //     toppings.push($(this).val());
-    // });
-    // alert("The toppings on your pizza will be: " + toppings);
-
-
-    // $('#chicken').change(function () {
-    //     let topping = $('#chicken option:check').val();
-    //     let chicken = 150;
-    //     let bacon = 150;
-    //     let sausage = 150;
-    //     let mushrooms = 100;
-    //     let greenPeppers = 100;
-    //     if (chicken == true) {
-    //         alert(chicken);
-    //     }
-    //     if (size == 'Medium') {
-    //         console.log(medium);
-    //     }
-    //     if (size == 'Small') {
-    //         console.log(small);
-    //     }
-
-    // });
-
-
-
 });
-
-
-    // let size = ['large', 'medium', 'small'];
-    // let crust = ['crispy', 'stuffed', 'glutenFree']
-    // let toppings = ['chicken', 'bacon', 'sausage', 'mushrooms', 'greenPeppers']
-    // let pizza = [size + crust[2] + toppings[1]]
-    // price = function () {
-
-    //     alert(size);
-
-    // };
-    // alert(price);
-
-
-
-    // var result = [{"id":"1","price":"20.46"},{"id":"2","price":"40.00"}]
-    // var userinputid = 1;
-
-    // result.forEach(function(e, index){
-    //   if(userinputid == result[index].id){
-    //     alert(result[index].price);
-    //   };
-// });
-
-
-
-
-
-
-//This will calculate the total amount
-// let total = ingredients.reduce((currentTotal, ingredint) => {
-//     return ingredint.price + currentTotal
-// }, 0)
-// console.log(Pizza)
