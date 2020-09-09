@@ -177,6 +177,82 @@ function refreshPizzaTable() {
 
 }
 
+function initPizzaSizes() {
+    $('#divPizzaSize').html();
+    myPizzaSizes.forEach(function (pizzaSize) {//set value as json string
+        let radioButton = '<div class="form-check form-check-inline">'
+            + '<input class="form-check-input" type="radio" name="pizza-size" value=' + JSON.stringify(pizzaSize) + ' >'
+            + '<label class="form-check-label" for="pizza-size">' + pizzaSize.displayName + '</label>'
+            + '</div >';
+
+        $('#divPizzaSize').append(radioButton);
+    });
+}
+
+
+function initPizzaCrusts() {
+    $('#divPizzaCrust').html();
+    myPizzaCrusts.forEach(function (pizzaCrust) { //set value as json string
+        let radioButton = '<div class="form-check form-check-inline">'
+            + '<input class="form-check-input" type="radio" name="pizza-crust" value=' + JSON.stringify(pizzaCrust) + ' >'
+            + '<label class="form-check-label" for="inlineRadio1">' + pizzaCrust.displayName + '</label>'
+            + '</div >';
+
+        $('#divPizzaCrust').append(radioButton);
+    });
+}
+
+function initPizzaToppings() {
+    $('#divPizzaToppings').html();
+    myPizzaToppings.forEach(function (topping) {//set value as json string
+        let checkBox = '<div class="form-group form-check form-check-inline">'
+            + '<input type="checkbox" class="form-check-input" name="pizza-toppings" value=' + JSON.stringify(topping).toString() + '>'
+            + '<label class="form-check-label" for="pizza-toppings">' + topping.displayName + '</label>'
+            + '</div>';
+
+        $('#divPizzaToppings').append(checkBox);
+    });
+}
+
+
+function addNewPizza() {
+    let pizzaSize = $('input[name="pizza-size"]:checked').val(); //in json string format
+    let pizzaCrust = $('input[name="pizza-crust"]:checked').val();//in json string format
+    let noOfPizzas = $('#txtHowMany').val();
+
+    if (pizzaSize == undefined) {
+        console.log('Please Select Size');
+        return false;
+    }
+    if (pizzaCrust == undefined) {
+        console.log('Please Select Crust');
+        return false;
+    }
+
+    let myPizza = new Pizza();
+    myPizza.size = JSON.parse(pizzaSize);//parse String back to PizzaSize object
+    myPizza.crust = JSON.parse(pizzaCrust);//parse String back to PizzaCrust object
+
+    let pizzaToppings = [];
+    $('input[name="pizza-toppings"]:checked').each(function () {
+        let jsonValue = $(this).val();
+        console.log('jsonValue: ', jsonValue);
+        pizzaToppings.push(JSON.parse(jsonValue)); //parse String back to PizzaTopping object
+    });
+
+    myPizza.addTopping(pizzaToppings);
+
+    console.log('myPizza: ', myPizza);
+    if (noOfPizzas == '' || noOfPizzas == undefined) {
+        myPizza.count = 1;
+    } else {
+        myPizza.count = noOfPizzas;
+    }
+
+    myOrder.addPizza(myPizza);
+    refreshPizzaTable();
+    resetForm();
+}
 
 
 
