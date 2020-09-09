@@ -42,9 +42,17 @@ var myPizzaToppings = [
     new PizzaTopping(6, 'Red-Peppers', 140, 160, 190),
 ];
 
-console.log('myPizzaSizes: ', myPizzaSizes);
+/* console.log('myPizzaSizes: ', myPizzaSizes);
 console.log('myPizzaCrust: ', myPizzaCrust);
-console.log('myPizzaToppings: ', myPizzaToppings);
+console.log('myPizzaToppings: ', myPizzaToppings); */
+
+function Pizza() {
+    this.total = 0;
+    this.count = 1;
+    this.size = new PizzaSize();
+    this.crust = new PizzaCrust();
+    this.toppings = [];
+}
 
 
 
