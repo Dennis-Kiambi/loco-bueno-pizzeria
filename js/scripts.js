@@ -42,6 +42,13 @@ var myPizzaToppings = [
     new PizzaTopping(6, 'Red-Peppers', 140, 160, 190),
 ];
 
+console.log('myPizzaSizes: ', myPizzaSizes);
+console.log('myPizzaCrust: ', myPizzaCrust);
+console.log('myPizzaToppings: ', myPizzaToppings);
+
+
+
+
 
     // function Pizza(pizzasize, crust, toppings, delivery) {
     /*
