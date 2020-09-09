@@ -19,8 +19,6 @@ function PizzaTopping(id, displayName, costSmall, costMedium, costLarge) {
     this.costLarge = costLarge;
 }
 
-
-
 var myPizzaSizes = [
     new PizzaSize(1, 'Small', 100),
     new PizzaSize(2, 'Medium', 200),
@@ -112,7 +110,6 @@ function DeliveryAddress(email, phoneNumber, physicalAddress, building) {
     this.phoneNumber = phoneNumber;
     this.physicalAddress = physicalAddress;
     this.building = building;
-
 }
 
 //Define order
@@ -124,6 +121,7 @@ function CustomerOrder() {
     this.deliveryCost = 300;
     this.total = 0;
 }
+
 CustomerOrder.prototype.addPizza = function (pizza) {
     this.pizzas.push(pizza);
     this.calculateTotal();
@@ -169,12 +167,9 @@ function refreshPizzaTable() {
             + '<td>' + pizza.count + '</td>'
             + '<td>' + pizza.total + '</td>'
             + '</tr>';
-
         $('#tablePizzas tbody').append(row);
     });
     $('#tablePizzasTotal').html(myOrder.total);
-
-
 }
 
 function initPizzaSizes() {
@@ -188,7 +183,6 @@ function initPizzaSizes() {
         $('#divPizzaSize').append(radioButton);
     });
 }
-
 
 function initPizzaCrusts() {
     $('#divPizzaCrust').html();
@@ -213,7 +207,6 @@ function initPizzaToppings() {
         $('#divPizzaToppings').append(checkBox);
     });
 }
-
 
 function addNewPizza() {
     let pizzaSize = $('input[name="pizza-size"]:checked').val(); //in json string format
@@ -263,6 +256,34 @@ function resetForm() {
 }
 
 //place order
+function placeOrder() {
+    if (myOrder.pizzas.length < 1) {
+        alert('Please add a pizza to proceed');
+        return false;
+    }
+
+    $('#divPizzaOptions').hide();
+    $('#divOrderDetails').show();
+}
+
+$(document).ready(function () {
+
+    $('#divOrderDetails').hide();
+    $('#delivery').hide();
+
+    refreshPizzaTable();
+    initPizzaSizes();
+    initPizzaCrusts();
+    initPizzaToppings();
+
+    $('#delivery-check').click(function () {
+        $('#delivery').toggle();
+        myOrder.deliver = $(this).is(':checked');
+        myOrder.calculateTotal();
+        $('#tablePizzasTotal').html(myOrder.total);
+        console.log('myOrder.deliver : ', myOrder.deliver);
+    });
+
 
 
 
