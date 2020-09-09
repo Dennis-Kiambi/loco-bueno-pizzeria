@@ -73,6 +73,40 @@
                     </tfoot>
                 </table>
 
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="delivery-check">
+                    <label class="form-check-label" for="delivery-check">I would like my pizza delivered</label>
+                </div>
+                <form id="delivery">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Kenyatta Av">
+                    </div>
+                    <div class="form-group">
+                        <label for="building">Building</label>
+                        <input type="text" class="form-control" id="building" placeholder="Apartment, studio, or floor">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="254******">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                </form>
 
 
                 <button type="button" onclick="placeOrder()" class="btn btn-primary">Place order</button>
