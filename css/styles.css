@@ -1,0 +1,9 @@
+body{
+    background-image: url('../images/pizza-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: white;
+}
+#tablePizzas{
+    color: white;
+}
