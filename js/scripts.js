@@ -54,6 +54,58 @@ function Pizza() {
     this.toppings = [];
 }
 
+Pizza.prototype.addTopping = function (newToppings) {
+    /* console.log('Clearing :', this.toppings);
+    this.toppings.splice(0, this.toppings.length);
+    console.log('End Clearing :', this.toppings);
+    this.toppings.push(newToppings);
+    console.log('After :', this.toppings); */
+
+    //console.log('newToppings :', newToppings);
+    this.toppings.splice(0, this.toppings.length);
+    let instance = this;
+    newToppings.forEach(function (item) {
+        instance.toppings.push(item);
+    });
+    this.calculateTotal();
+}
+
+Pizza.prototype.calculateTotal = function () {
+    var total = 0;
+    total += this.size.cost;
+    total += this.crust.cost;
+
+    let id = this.size.id;
+
+    let toppingTotal = this.toppings.reduce(function (sum, topping) {
+        if (id === 1) {//small
+            return sum + topping.costSmall;
+        } else if (id === 2) {//medium
+            return sum + topping.costMedium;
+        } else if (id === 3) {// large
+            return sum + topping.costLarge;
+        }
+    }, 0);
+
+    total += toppingTotal;
+
+    this.total = total * this.count;
+}
+
+/* var myPizzaTest = new Pizza();
+myPizzaTest.size = myPizzaSizes[1];
+myPizzaTest.crust = myPizzaCrust[2];
+myPizzaTest.count = 2;
+
+var myTestToppings = [
+    myPizzaToppings[1],
+    myPizzaToppings[2],
+    myPizzaToppings[4]
+]
+myPizzaTest.addTopping(myTestToppings);
+myPizzaTest.calculateTotal(); */
+
+//console.log('myPizzaTest: ', myPizzaTest);
 
 
 
